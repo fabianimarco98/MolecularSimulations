@@ -5,6 +5,15 @@
 In this project, I investigated how specific mutations could enhance the stability of the enzyme subtilisin using molecular dynamics (MD) simulations and in silico mutagenesis. I integrated GROMACS simulations with FoldX calculations to analyze protein flexibility (via RMSF), examine conserved functional sites, and predict the effect of mutations on protein stability through ΔΔG values.
 
 ---
+## Project Goals
+
+This project aims to identify stabilizing mutations in Subtilisin through molecular dynamics and in silico mutagenesis. In addition to improving the enzyme's intrinsic stability, a key focus is to explore mutations that may:
+* Reduce the binding affinity of Eglin-C, a known serine protease inhibitor, without compromising enzymatic function.
+* Preserve or enhance structural integrity, especially in surface-exposed, flexible loops identified via RMSF.
+* Serve as a proof of concept for rational design of protease variants with lower inhibitor sensitivity, relevant in both industrial and biomedical contexts.
+
+
+---
 
 ## Project Structure
 
