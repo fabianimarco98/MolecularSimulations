@@ -1,17 +1,17 @@
-# In silico Mutagenesis and Stability Analysis of Subtilisin
+# In Silico Mutagenesis and Stability Analysis of Subtilisin
 
 ## Abstract
 
-In this project, I investigated how specific mutations could enhance the stability of the enzyme subtilisin using molecular dynamics (MD) simulations and in silico mutagenesis. I integrated GROMACS simulations with FoldX calculations to analyze protein flexibility (via RMSF), examine conserved functional sites, and predict the effect of mutations on protein stability through ΔΔG values.
+In this project, I explored how specific mutations could improve the stability of the enzyme subtilisin using molecular dynamics (MD) simulations and in silico mutagenesis. I combined GROMACS simulations with FoldX calculations to analyze protein flexibility (via RMSF), inspect conserved functional sites, and predict the effects of mutations on protein stability through ΔΔG values.
 
 ---
+
 ## Project Goals
 
 This project aims to identify stabilizing mutations in Subtilisin through molecular dynamics and in silico mutagenesis. In addition to improving the enzyme's intrinsic stability, a key focus is to explore mutations that may:
 * Reduce the binding affinity of Eglin-C, a known serine protease inhibitor, without compromising enzymatic function.
 * Preserve or enhance structural integrity, especially in surface-exposed, flexible loops identified via RMSF.
 * Serve as a proof of concept for rational design of protease variants with lower inhibitor sensitivity, relevant in both industrial and biomedical contexts.
-
 
 ---
 
@@ -94,6 +94,40 @@ This project aims to identify stabilizing mutations in Subtilisin through molecu
 
 ---
 
+## Targeting Eglin-C Binding
+
+### Objective
+
+To design subtilisin variants that preserve catalytic activity while reducing eglin-C inhibitor binding affinity, starting from the crystallographic structure 1MEE.
+
+### Strategy
+
+1. **Identify Key Sites**:
+
+   * Preserve the catalytic triad (Ser-His-Asp).
+   * Map the inhibitor interface using tools like PyMOL, PISA, or VMD (residues within 5 Å of eglin-C).
+
+2. **Filter Candidates**:
+
+   * Focus mutagenesis on interface residues only.
+   * Avoid residues directly involved in catalysis or structural core integrity.
+
+3. **FoldX Screening**:
+
+   * Run `PositionScan` on interface residues.
+   * Identify mutations with ΔΔG > 0 for the inhibitor interface (reduced binding), but minimal destabilization of subtilisin.
+
+4. **Validate Candidates**:
+
+   * Optionally dock eglin-C to the mutated subtilisin (e.g., AutoDock, HADDOCK).
+   * Evaluate interaction energy or hydrogen bonds.
+
+5. **MD Refinement**:
+
+   * Run short MD simulations (5–10 ns) of top mutants to assess structural stability and interaction persistence.
+
+---
+
 ## Appendix
 
 * Key GROMACS commands used
@@ -121,4 +155,4 @@ foldx --command=BuildModel --pdb=prot.pdb --mutant-file=individual_list.txt
 
 I'm Marco, a Master's student in Industrial Biotechnology. My interests lie at the crossroads of protein engineering and computational biology. I'm currently looking for a PhD opportunity focused on structure-based protein design, mutagenesis, and machine learning applied to biochemical problems.
 
-[LinkedIn](#) | [CV](#) | [Email](#)
+LinkedIn | CV | Email
